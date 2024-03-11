@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="spirits.MainPage"
+             BackgroundColor="Black"
+             Shell.NavBarIsVisible="False">
+
+    <Grid>
+      <Grid.RowDefinitions>
+        <RowDefinition Height="150"/>
+        <RowDefinition Height="*"/>
+        <RowDefinition Height="60"/>
+      </Grid.RowDefinitions>
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="*"/>
+        <ColumnDefinition Width="60"/>
+        <ColumnDefinition Width="60"/>
+      </Grid.ColumnDefinitions>
+
+      <Label Text="Se você é meu escolhido, basta digitar! Faça alguns elogios antes, depois me pergunte o que deseja!"
+             TextColor="Red"
+             FontAttributes="Bold"
+             BackgroundColor="Black"
+             FontSize="18"
+             Margin="20, 50, 20, 0"
+             HorizontalTextAlignment="Center"
+             VerticalOptions="End"
+             Grid.Row="0"
+             Grid.ColumnSpan="3"/>
+
+      <Label x:Name="labelPergunta"
+             TextColor="White"
+             BackgroundColor="Black"
+             FontSize="14"
+             Grid.Row="1"
+             Grid.ColumnSpan="3"/>
+
+      <Entry x:Name="entryPergunta"
+             BackgroundColor="DarkGray"
+             Opacity=".03"
+             TextChanged="QuandoTextoMudar"
+             HeightRequest="50"
+             Grid.Row="2"
+             Grid.Column="0"/>
+             
+      <Button Text="?"
+              Clicked="QuandoClicarNoBotaoMostrarResposta"
+              TextColor="White"
+              FontAttributes="Bold"
+              FontSize="18"
+              BackgroundColor="Purple"
+              HeightRequest="50"
+              WidthRequest="50"
+              CornerRadius="25"
+              Grid.Row="2"
+              Grid.Column="1"/>
+      <Button Text="X"
+              Clicked="QuandoClicarNoBotaoLimpar"
+              TextColor="White"
+              FontAttributes="Bold"
+              FontSize="18"
+              BackgroundColor="Red"
+              HeightRequest="50"
+              WidthRequest="50"
+              CornerRadius="25"
+              Grid.Row="2"
+              Grid.Column="2"/>
+
+
+      <Frame x:Name="frameResposta"
+             IsVisible="false"
+             Margin="10, 0"
+             BackgroundColor="Black"
+             BorderColor="White"
+             VerticalOptions="Center"
+             Grid.Row="0"
+             Grid.Column="0"
+             Grid.RowSpan="3"
+             Grid.ColumnSpan="3">
+        <VerticalStackLayout>
+          <Label x:Name="labelResposta"
+                 TextColor="White"
+                 Margin="0,0,0,50"
+                 HorizontalTextAlignment="Center"
+                 FontSize="18"/>
+          <Button Text="voltar"
+                  Clicked="QuandoClicarNoBotaoVoltar"
+                  TextColor="white"
+                  Margin="20, 10"
+                  BackgroundColor="Purple"
+                  CornerRadius="25"
+                  HeightRequest="50"/>
+        </VerticalStackLayout>
+      </Frame>
+             
+
+    </Grid>
+    
+</ContentPage>
